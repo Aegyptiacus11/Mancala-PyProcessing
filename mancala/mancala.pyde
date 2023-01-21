@@ -194,7 +194,7 @@ def NegaMaxAlphaBetaPruning1(game, player, depth, alph, beta):
         again, right = child_game.state.doMove(game.playerSide[player], pit)
         
         if again:
-            value, _ = NegaMaxAlphaBetaPruning1 (child_game, player, depth-1, -beta, -alph)
+            value, _ = NegaMaxAlphaBetaPruning1 (child_game, player, depth-1, alph, beta)
         else:
             value, _ = NegaMaxAlphaBetaPruning1 (child_game, -player, depth-1, -beta, -alph)
         
@@ -279,7 +279,7 @@ class pit:
             return False
 
 def setup():
-    fullScreen()
+    size(1920,1200)
     frameRate(4)
     global HUMAN
     global COMPUTER
