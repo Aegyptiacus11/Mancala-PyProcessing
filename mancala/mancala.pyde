@@ -428,6 +428,8 @@ def draw():
             elif etat == 2:
                 if not game.gameOver():
                     if currentPlayer == COMPUTER:
+                            storeC = game.state.value[game.playerSide[COMPUTER]]
+                            storeH = game.state.value[game.playerSide[HUMAN]]
                             _, bp = NegaMaxAlphaBetaPruning (game, COMPUTER, 8,float('-inf'),float('inf'),False,0,storeC,storeH)
                             print(bp)
                             done,_ = game.state.doMove(game.playerSide[currentPlayer], bp)
