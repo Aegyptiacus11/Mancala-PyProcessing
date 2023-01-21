@@ -406,6 +406,7 @@ def draw():
             render(game.playerSide[currentPlayer])
         else:
             if etat == 1:
+                #HvsC
                 if not game.gameOver():
                     if currentPlayer == COMPUTER:
                         if game.state.move == 0:
@@ -426,6 +427,7 @@ def draw():
                     winner,_ = game.findWinner()
                     text('Player '+str(winner)+' wins!!!!!!', width/2-200, height/2)
             elif etat == 2:
+                #CvsC
                 if not game.gameOver():
                     if currentPlayer == COMPUTER:
                             storeC = game.state.value[game.playerSide[COMPUTER]]
